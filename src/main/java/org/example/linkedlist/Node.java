@@ -1,11 +1,11 @@
 package org.example.linkedlist;
 
-public class Node {
+public class Node<T> {
 
-    int data;
-    Node next;
+    T data;
+    Node<T> next;
 
-    public Node(int data) {
+    public Node(T data) {
         this.data = data;
         this.next = null;
     }
