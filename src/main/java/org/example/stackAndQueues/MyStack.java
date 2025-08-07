@@ -1,5 +1,7 @@
 package org.example.stackAndQueues;
 
+import java.util.Stack;
+
 public class MyStack {
 
     private int[] data;
@@ -12,12 +14,16 @@ public class MyStack {
         top = -1;
     }
 
-    private void push(int val) throws Exception{
+    public int size(){
+        return top + 1;
+    }
+
+    public void push(int val) throws Exception{
         if (isFull()) throw new Exception("StackOverflow");
         data[++top] = val;
     }
 
-    private int pop() throws Exception{
+    public int pop() throws Exception{
         if (isEmpty()) throw new Exception("StackUnderflow");
         return data[--top];
     }
@@ -35,12 +41,21 @@ public class MyStack {
         System.out.println();
     }
 
-    private boolean isEmpty(){
+    boolean isEmpty(){
         return top == -1;
     }
 
-    private boolean isFull(){
+    public boolean isFull(){
         return top == capacity-1;
+    }
+
+    public int removeBottom(){
+        int bottom = data[0];
+        for (int i = 1; i <= top; i++) {
+            data[i - 1] = data[i];
+        }
+        top--;
+        return bottom;
     }
 
 }
