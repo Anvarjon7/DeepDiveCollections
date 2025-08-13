@@ -22,16 +22,18 @@ public class MyQueue<T> {
     private void shiftStacks(){
         if (stackOldest.isEmpty()){
             while (!stackNewest.isEmpty()){
-                stackOldest.add(stackNewest.peek());
+                stackOldest.add(stackNewest.pop());
             }
         }
     }
 
     private T remove(){
+        shiftStacks();
         return stackOldest.pop();
     }
 
     private T peek(){
+        shiftStacks();
        return stackOldest.peek();
     }
 }
