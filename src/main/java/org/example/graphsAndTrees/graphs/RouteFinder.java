@@ -2,10 +2,7 @@ package org.example.graphsAndTrees.graphs;
 
 import org.example.stackAndQueues.queuePractice.MyQueue;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 enum State {
     UNVISITED,
